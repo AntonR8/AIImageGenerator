@@ -22,6 +22,7 @@ struct PaywallView: View {
                 LogoAndAdvantagesView()
                 SubscriptionsOptionsView()
                 Spacer()
+                button
                 PrivacyPolicyLinksView()
             }
             .padding(.horizontal)
@@ -77,7 +78,7 @@ extension PaywallView {
 
     var button: some View {
         Button {
-
+            // vm.makePurchase
         } label: {
             CapsuleButton(buttonTitle: "Continue")
         }

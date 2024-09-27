@@ -10,10 +10,17 @@ import AppTrackingTransparency
 import ApphudSDK
 import StoreKit
 
+enum Subscribtion {
+    case monthly
+    case yearly
+}
+
 class ViewModel: ObservableObject {
 
     // Paywall
-    @Published var chosenSubscription: Product?
+
+    @Published var chosenSubscription: Subscribtion = .monthly
+//    @Published var chosenSubscription: Product?
     @AppStorage("firstLaunch") var firstLaunch = true
     @Published var proSubscriptionBought = false
     @Published var showSubscriptionSheet = false

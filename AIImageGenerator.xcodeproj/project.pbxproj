@@ -157,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				12124D292C944147009C7C70 /* PaywallView.swift */,
-				12124D2C2C94490C009C7C70 /* SuscriptionButton.swift */,
 				12CEC6ED2CA6C38F0043FE7A /* Elements */,
 			);
 			path = Paywall;
@@ -233,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				12CEC6EE2CA6C3CA0043FE7A /* PrivacyPolicyLinksView.swift */,
+				12124D2C2C94490C009C7C70 /* SuscriptionButton.swift */,
 				12CEC6F02CA6C42B0043FE7A /* SubscriptionsOptionsView.swift */,
 				12CEC6F22CA6C4CD0043FE7A /* LogoAndAdvantagesView.swift */,
 			);

@@ -13,15 +13,15 @@ struct SubscriptionsOptionsView: View {
     var body: some View {
         VStack {
             Button(action: {
-//                vm.chosenSubscription = monthly
+                vm.chosenSubscription = .monthly
             }, label: {
-                SuscriptionButton(price: 19.99, bestOffer: false, subscription: "monthly")
+                SuscriptionButton(price: 19.99, bestOffer: false, subscription: .monthly)
             })
             .padding(.vertical, 8)
             Button(action: {
-//                vm.chosenSubscription = yearly
+                vm.chosenSubscription = .yearly
             }, label: {
-                SuscriptionButton(price: 39.99, bestOffer: true, subscription: "yearly")
+                SuscriptionButton(price: 39.99, bestOffer: true, subscription: .yearly)
             })
         }
     }

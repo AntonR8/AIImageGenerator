@@ -11,18 +11,18 @@ struct SuscriptionButton: View {
     @EnvironmentObject var vm: ViewModel
     var price: Double
     let bestOffer: Bool
-    let subscription: String
+    let subscription: Subscribtion
 
     var body: some View {
         HStack() {
-            Image(systemName: "checkmark.circle.fill")
+            Image(systemName: vm.chosenSubscription == subscription ? "checkmark.circle.fill" : "circle")
             VStack(alignment: .leading) {
                 Group {
-                    Text(subscription == "monthly" ? "Monthly" : "Yearly") + Text(" · $").foregroundStyle(.secondary) + Text(price.description).foregroundStyle(.secondary)
+                    Text(subscription == .monthly ? "Monthly" : "Yearly") + Text(" · $").foregroundStyle(.secondary) + Text(price.description).foregroundStyle(.secondary)
                 }
                 .font(.caption)
                 Text("$") + Text((String(format: "%.2f",
-                                         subscription == "monthly" ? price/4-0.01 : price/21.385))) + Text(" / week")
+                                         subscription == .monthly  ? price/4-0.01 : price/21.385))) + Text(" / week")
             }
             .foregroundStyle(.white)
             if bestOffer {
@@ -44,13 +44,13 @@ struct SuscriptionButton: View {
         .background(.gray.opacity(0.3))
         .clipShape(Capsule())
         .overlay {
-            Capsule().stroke(vm.chosenSubscription != nil ? .accent : .clear)
+            Capsule().stroke(vm.chosenSubscription == subscription ? .accent : .clear)
         }
     }
 }
 
 #Preview {
-    SuscriptionButton(price: 19.99, bestOffer: true, subscription: "monthly")
+    SuscriptionButton(price: 19.99, bestOffer: true, subscription: .monthly)
         .environmentObject(ViewModel())
 }
 
