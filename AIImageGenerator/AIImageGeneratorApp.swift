@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import TipKit
+
 
 @main
 struct AIImageGeneratorApp: App {
+    @EnvironmentObject var vm: ViewModel
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
+                .environmentObject(ViewModel())
+                .task {
+                    try? Tips.configure([
+                        .datastoreLocation(.applicationDefault)
+                    ])
+                }
         }
     }
 }

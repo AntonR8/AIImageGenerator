@@ -1,0 +1,74 @@
+//
+//  Promts.swift
+//  AIImageGenerator
+//
+//  Created by Антон Разгуляев on 25.09.2024.
+//
+
+import SwiftUI
+
+
+struct Prompts {
+    var prompts: [String] = [
+        "An Escher-like transformation of a face: The scene shows a human face transforming into a mosaic of stairs, arches, and impossible structures. Each part of the face--like the cheekbones, jawline, and forehead--forms part of an endless loop of impossible architecture. Shadows and lines give depth, making the face both realistic and abstract, with the illusion of infinite depth within the eyes, black background.",
+        "emotive moody Anders Zorn oil painting of half collapsed giant frightening statue of a horse, made from parts of wooden ships, armour and shields, in the smoldering ruins of the ancient city of troy, the dawn after the battle of troy, broken wagons, fallen soilders, armour and shields, misty dawn light, horror elements, pastel colours",
+        "Elegant and minimalistic logo of a roaring cheetah climbing onto a tree. The design should have a modern style, with a focus on simplicity and elegance. The background is white.",
+        "An oil painting of the iconic Maria Antoinette paintings. The other side is a modern digital illustration of a very beautiful woman's face. In between them lies a split composition.",
+        "A beautiful white-haired fairy with wings, sitting on the mossy ground in an enchanted forest surrounded by glowing fireflies at night, holding up her wand and casting magic spells. A colorful fantasy illustration in the style of artist James C. Christensen, golden age of illustrations, glowing, elder lords, john Bauer Kay nielsen Edmund dulac, Tim walker, pentax k1000, with bright colors, deep reds and purples, and greens.",
+        "The cutest little koala you have ever seen, beautiful eyes, a cute nose, fluffy ears. Koala has an adorable face looking in the camera and smiles gently. He is in a white and pink blanket, high-definition photography. This high-quality photo shows off this furry critter's ultra-detailed features and natural fur texture. The image features high definition, focus and resolution, highlighting the natural beauty of this adorable creature in natural light. The atmosphere looks very cute",
+        "Male with black hair ,Cool guy,Male with blue hair ,Cool guy,Woman with pink hair, Cute teenage girl,Woman with blue-purple hair, Cute teenage girl,They4 are talking, Kind smile,at the building,emo, A simple 1990s Manga, Simple Japanese Manga, flat colors",
+        "A minimalist poster design featuring an abstract shape with vibrant lime green to teal gradients, small amount of perforation, representing the concept of creativity and innovation in digital marketing. The background is black and elegant to highlight the colorful form. High-resolution, with sharp focus on the gradient for impact, vibrant lime and teal gradient with metallic elements",
+        "surreal horror church at night with a shadow like figure peeking from the entrance at the distance, dreamy, creepy, unnerving, dark toned, photo by Emmanuel Lubezki",
+        "A chubby American 1 year old baby with an exaggerated bulging figure, chubby cheeks and sunglasses, he is wearing a black biker leather jacket with a gray t-shirt underneath, slim jeans on the bottom half and black leather boots. Wearing a pair of dark aviator sunglasses, his overall look was cool, and his round, full cheeks, soft face and playful expression, and bulbous tummy gave him a cute and fun look. He walked confidently through the runway show as if the runway belonged to him, with a soft background bokeh highlighting his presence in the middle of the runway in the background. HD digital photography style, photo-realistic, realistic style, top quality, ultra HD.",
+        "Black hand of witch with glass of cocktail on red background. Halloween celebration",
+        "One lemon on a white table, soft shadow, simple composition, high-resolution photography, hyperrealistic, stock photo, natural lighting, neutral color palette, clean, minimalist aesthetic, close-up shot, low angle, high detail. stock tilt shift photography on a white background cinematic lighting shadows Hd 3d 32k photography::4 Well-lit, sharp-focus, high-quality, artistic, unique, award-winning photograph, Canon EOS 5D Mark IV DSLR, f/8 aperture, 1/125 second shutter speed, ISO 100, professional lighting setup Adobe Photoshop, incredible detailed composition, attention to detail::3",
+        "On a white background, Create a cute ghost character inspired by Casper and Slimer, with big sparkling eyes and a playful grin, floating above a colorful pumpkin patch. The ghost wears dresses designed by Valerie Hegarty, surrounded by whimsical swirls of pastel colors. Drawing style: Kawaii, using a nice soft pastel color palette with mint greens, light pinks, and yellows",
+        "a cute rare dog",
+        "A pink sun setting behind mountains, birds flying in the sky, high-definition photography.",
+        "September is an adorable boy with warm heart, as gentle like breeze, fresh like morning dew, style by alfons mucha, much light shedding bg",
+        "Comic book-style marketer presenting a viral post, explosive background, contrasting colors",
+        "black and white HD photography of a man riding a design indoor bike, fish eye photography, black background light by white circular smoky light",
+        "A super super cute blonde-haired, blue-eyed baby cosplaying as a moose, with tiny antlers and a brown furry outfit. The baby rides a towering moose with giant antlers, captured from a wide-angle lens that enhances the moose’s impressive size as they march through New York",
+        "eye-level full body shot of photograph of a hairy white elephant September grassy, meadow landscape, futuristic armor, interstellar dinosaur, black ceramic robotic rider mounted on its back, futuristic house, cinematic. high detail. nikon z6ii 80mm f/1.4",
+        "stained glass garden with vibrant flowers, lush greenery, whimsical butterflies, and tiny magical creatures, luminous appearance, intricate details, bold colorful panels, enchanting and mesmerizing, on a vibrant blue and green background, 4K",
+        "a small baby elephant inside a victorian teacup intricately designed, elephant is holding the edge of the teacup, teacup has some 3D elements and minimal vines, minimal bright colors, light background, human hand holding teacup, a micro shot to capture details",
+        "Enjoying Coffee and Cake at a Market. Concept Market Exploration, Coffee Tasting, Delicious. Concept Market Exploration, Coffee Tasting, Delicious Desserts, Local Vendors Enjoying Coffee and Cake at a Market",
+        "The image depicts a retro sync wave scenery with a setting sun in the background. The delorian from back to the future is parking in the middle, the DMC logo of the delorian is clearly visible.",
+        "at a pink and white feminine studio with white fur carpets A pile of old, retro-pinky style televisions with different styles and sizes making a pile triangluar form stacked on top of each other This scene is captured in a realistic style using photography techniques like wide-angle shots for perspective and a pink color palette. low key neon lights cinematography",
+        "The little prince, dressed in green clothes, shorts, a yellow scarf, and blond hair, stands in what is a real underwater scene with colorful fish swimming in the water, seen through rectangular holes on a black background. An inside-out view shows a white bottom. A small group of rocks can be seen on one side of the aquarium. There seems to be some light hitting these stones, but it creates an atmosphere that adds depth and detail to what we see. It feels like you're staring into another world where life is thriving.",
+        "Kenshi Roy-Ronin, photorealistic, 4k",
+        "Ethereal god-like figure, DJing on acloud. Heavenly",
+        "Focus on Lisbon, Portugal - old town with castle view. Paint a watercolor Impressionist bird-view cityscape capturing the glow of a summer day. Use bright colors with warm, dusty tones and blend them seamlessly to convey the tranquil and free-spirited vibe of the boho style. clipart isolated on solid white background. Kodak Tri-X 400, isolation and warmth, textured palette knife work",
+        "Blue Gingham with cherries",
+        "A photograph of an albino man with blue and red tattoos on his face, wearing numerous gold chains covered in flowers and long, straight spikes that protrude from the skin all over his body. The image was shot by Tim Walker against a dark, sky-blue background, with many red glass beads falling down into the camera.",
+        "a cute pixie girl with green hair, big glasses, freckles, expressive eyes",
+        "close-up, a full moon, stars, and a little white rabbit, an ultra realistic and highly detailed illustration , 8K most detailed",
+        "real photo about 4 saudi worker wearing full buttoned white thobe and red shemagh are meeting together in the meeting room",
+        "create a minimal photo-realistic image on a light background for a Facebook ad about a white Caucasian man surrounded by an absurd amount of money, enjoying his financial success.",
+        "Still life oil painting featuring a beautifully presented bowl of traditional ramen with delicate noodles, soft- boiled egg, seaweed, and slices of pork in a rich broth. The bowl is set on a rustic wooden table, with a pair of elegant ebony chopsticks resting beside it. Surrounding the dish are small porcelain cups of green tea, a silk red napkin with golden embroidery, and a decorative jade figurine. The background is a deep, muted teal with a soft, ambient glow, creating a balanced and harmonious composition",
+        "A tiny crystal peacock,tiny,The smallest in the world,Stand in the tip of someone's Palm,spreads its tail,long tail,side face,,captured in high-definition photography.",
+        "Blonde women, straight long hair, lavender dress, perfect quality, studio photo",
+        "A young adult sitting at a desk with a tired, frustrated expression, holding their head in their hands. Papers, a laptop, and a coffee cup are scattered on the desk. The background shows a casual home or office setting. The lighting is soft and neutral, emphasizing a lack of motivation",
+        "A beautiful husky in the snow, with a mountain background, blue eyes, in the style of Pixar.",
+        "realistic illustration of a galaxy inside a glass of water, fantasy, muystical, energy",
+        "A Chinese girl student is sitting on a step, with both feet stepping under two steps, With her right hand supporting her chin, she is in a daze,realistic photography photo",
+        "William Marshal reissuing the Magna Carta in 1216 to pacify the rebellious barons, regal and historic scene. Hyper Realistic HD photos",
+        "raven from teen titans, she has black hair with purple highlights, she is wearing purple cloak, she has a red mark shaped as a diamond in the center of her forehead, grey colored skin, vibrant blue shattered glass background, ravens in background",
+        "England at the end of the 19th century, refugees fleeing war, There were cabs, carriages, shop-carts, waggons, beyond counting; a mail cart, a road- cleaner’s cart marked Vestry of St. Pancras, a huge timber waggon crowded with roughs. , colors",
+        "illustration of a murder mystery character who lives in a haunted mansion called the manor. the character is a male historian, he is wearing glasses, and is seated on the floor surrounded by piles of history books. there is a cat seated on one of the piles",
+        "A smoothie bowl topped with fresh fruits, seeds, and nuts, vibrant colors and textures, placed on a marble table with sunlight streaming in, perfect for a healthy breakfast or snack imagery",
+        "mirage, light pink sand on the ground, an ancient golden hexagonal roof pavilion suspended in the sky, cloud. The second floor are houses. like faintly visible fairyland, Extremely detailed, Hyper resolution",
+        "A fairy with 2 symmetrical wings on her shoulders, she is drawn in the style of an animation, of a cartoon character design, cute and dreamy, long hair piled very high on her head, happy expression, close-up portrait, dark background, side view, standing pose, holding a tiny kitten in her hand.",
+        "an elegant arrangement of a Christmas wreath, colorful ornaments, a joyful snowman, and shimmering stars, intertwined with festive flowers, all displayed on a clean white background",
+        "Photo-realistic, ultra realistic, colour grading, high detail, excellent lighting, a golden Silicon Valley with icons of technology, and Wall Street with skyscrapers made of cash bills",
+        "aerial angle shot of enormous ancient city rising from the sea with a background of esoteric jungle capturing a multifaceted theme and emotion, unreal engine, cgi, octane render, highly detailed, in the style of hyper-realistic sci-fi, visionary art, vibrant, zbrush, analogous dynamic chaos, photo-realistic techniques, award-winning, high contrast, cinematic still, ineffable detail ray-tracing, Ineffable scale, high resolution",
+        "photo, ambiance légère et colorée, vue de haut, homme en équilibre de profil sur un fil, les bras écartés, au dessus du ciel et nature",
+        "cat lying in front of a cozy fireplace, tail curled around its body, eyes half-closed in relaxation. a cat's tail, The room is dimly lit, with the warm glow of the fire casting soft shadows on the floor. The cat looks completely at peace, colorful animation stills, oshare kei aesthetic, dark green and pink color scheme, in the style of Hayao Miyazaki anime",
+        "There is a round aquarium on the table. Inside the aquarium there is a golden piggy bank. The bottom of the aquarium is covered with gold coins. The pig is happy. Behind the aquarium, out of focus, is a bank room. The mood of prosperity and success. Photorealistic image. Elaborate textures and details. Realistic.",
+        "Children story illustration ，While playing in the depths of the forest, a spotted deer unexpectedly discovers a hidden cave filled with a mysterious aura. The deer cautiously enters the cave and sees a magical bell emitting a strange light. The spotted deer gazes at the glowing bell with a smile on its face,high detail ， octane render"
+    ]
+
+    var arts: [ImageStyle] = [
+        .art, .art, .art, .photo, .drawingStyle, .photo,.drawingStyle,.none,.photo,.photo,.art,.photo,.none,.art,.art,.art,.drawingStyle,.photo,.photo,.photo,.drawingStyle,.photo,.photo,.drawingStyle,.art,.art,.photo,.art,.drawingStyle,.drawingStyle,.photo,.drawingStyle,.art,.photo,.photo,.photo,.photo,.photo,.photo,.art,.art,.art,.photo,.drawingStyle,.drawingStyle,.drawingStyle,.photo,.art,.drawingStyle,.photo,.art,.art,.art,.drawingStyle,.photo,.art
+    ]
+}
