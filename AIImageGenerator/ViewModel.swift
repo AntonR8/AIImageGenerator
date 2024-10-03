@@ -13,10 +13,8 @@ import StoreKit
 class ViewModel: ObservableObject {
 
     // Paywall
-
-//    @Published var chosenSubscription: Subscribtion = .monthly
-    @Published var products: [Product] = []
-    @Published var chosenSubscription: Product?
+    @Published var products: [ApphudProduct] = []
+    @Published var chosenSubscription: ApphudProduct?
     @AppStorage("firstLaunch") var firstLaunch = true
     @Published var proSubscriptionBought = false
     @Published var showSubscriptionSheet = false
@@ -63,6 +61,8 @@ class ViewModel: ObservableObject {
             await loadProducts()
         }
 
+        self.proSubscriptionBought = Apphud.hasActiveSubscription()
+
         getHardCodeImages()
 
         guard
@@ -89,29 +89,32 @@ class ViewModel: ObservableObject {
 
     // Paywall
     func loadProducts() async {
-       do {
-           async let loadedProducts = try await Apphud.fetchProducts()
-           let fetchedProducts = try await loadedProducts
-           await MainActor.run {
-               self.products = fetchedProducts
-               if !fetchedProducts.isEmpty {
-                   self.chosenSubscription = products[1]
-                   print("По умолчанию задан продукт \(self.chosenSubscription!.id)")
-               }
-           }
-              print("products successfully fetched: \(products.map { $0.id })")
-       } catch {
-                print("products fetch error = \(error)")
-       }
+        async let loadedPlacement = await Apphud.placement("PlacementOnBoarding")
+        let myPlacement = await loadedPlacement
+
+        await MainActor.run {
+            self.products = myPlacement?.paywall?.products ?? []
+            if !products.isEmpty {
+                self.chosenSubscription = products[1]
+                print("По умолчанию задан продукт: \(chosenSubscription?.name ?? "не задан")")
+            }
+        }
+        print("products successfully fetched: \(products.map { $0.name })")
     }
 
-    func makePurchase(product: Product?) {
+    func makePurchase(product: ApphudProduct?) {
         Task {
             if let product {
-                await Apphud.purchase(product)
+                await Apphud.purchase(product) { result in
+                    if result.success {
+                        print("Purchase successful")
+                        self.proSubscriptionBought = true
+                    }
+                }
             }
         }
     }
+
 
     // init
     func getHardCodeImages() {

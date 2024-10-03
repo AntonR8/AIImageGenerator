@@ -13,7 +13,7 @@ struct SuscriptionButton: View {
     @EnvironmentObject var vm: ViewModel
     var price: Double
     let bestOffer: Bool
-    let subscription: Product?
+    let subscription: ApphudProduct?
 
     var body: some View {
 
