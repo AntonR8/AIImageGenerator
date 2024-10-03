@@ -27,9 +27,6 @@ struct PaywallView: View {
             }
             .padding(.horizontal)
         }
-        .onAppear {
-//            Apphud.paywallShown(paywall)
-        }
     }
 }
 
@@ -78,7 +75,7 @@ extension PaywallView {
 
     var button: some View {
         Button {
-            // vm.makePurchase
+            vm.makePurchase(product: vm.chosenSubscription)
         } label: {
             CapsuleButton(buttonTitle: "Continue")
         }

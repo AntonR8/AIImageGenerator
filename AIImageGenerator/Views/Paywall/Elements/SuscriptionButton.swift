@@ -6,23 +6,25 @@
 //
 
 import SwiftUI
+import ApphudSDK
+import StoreKit
 
 struct SuscriptionButton: View {
     @EnvironmentObject var vm: ViewModel
     var price: Double
     let bestOffer: Bool
-    let subscription: Subscribtion
+    let subscription: Product
 
-    var body: some View {
+    var body: some View { 
         HStack() {
             Image(systemName: vm.chosenSubscription == subscription ? "checkmark.circle.fill" : "circle")
             VStack(alignment: .leading) {
                 Group {
-                    Text(subscription == .monthly ? "Monthly" : "Yearly") + Text(" · $").foregroundStyle(.secondary) + Text(price.description).foregroundStyle(.secondary)
+                    Text(subscription == vm.products[1] ? "Monthly" : "Yearly") + Text(" · $").foregroundStyle(.secondary) + Text(price.description).foregroundStyle(.secondary)
                 }
                 .font(.caption)
                 Text("$") + Text((String(format: "%.2f",
-                                         subscription == .monthly  ? price/4-0.01 : price/21.385))) + Text(" / week")
+                                         subscription == vm.products[1]  ? price/4-0.01 : price/21.385))) + Text(" / week")
             }
             .foregroundStyle(.white)
             if bestOffer {
@@ -49,9 +51,9 @@ struct SuscriptionButton: View {
     }
 }
 
-#Preview {
-    SuscriptionButton(price: 19.99, bestOffer: true, subscription: .monthly)
-        .environmentObject(ViewModel())
-}
+//#Preview {
+//    SuscriptionButton(price: 19.99, bestOffer: true, subscription: .monthly)
+//        .environmentObject(ViewModel())
+//}
 
 

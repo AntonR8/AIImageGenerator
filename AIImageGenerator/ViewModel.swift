@@ -10,17 +10,13 @@ import AppTrackingTransparency
 import ApphudSDK
 import StoreKit
 
-enum Subscribtion {
-    case monthly
-    case yearly
-}
-
 class ViewModel: ObservableObject {
 
     // Paywall
 
-    @Published var chosenSubscription: Subscribtion = .monthly
-//    @Published var chosenSubscription: Product?
+//    @Published var chosenSubscription: Subscribtion = .monthly
+    @Published var products: [Product] = []
+    @Published var chosenSubscription: Product?
     @AppStorage("firstLaunch") var firstLaunch = true
     @Published var proSubscriptionBought = false
     @Published var showSubscriptionSheet = false
@@ -94,17 +90,26 @@ class ViewModel: ObservableObject {
     // Paywall
     func loadProducts() async {
        do {
-              let products = try await Apphud.fetchProducts()
+           async let loadedProducts = try await Apphud.fetchProducts()
+           let fetchedProducts = try await loadedProducts
+           await MainActor.run {
+               self.products = fetchedProducts
+               if !fetchedProducts.isEmpty {
+                   self.chosenSubscription = products[1]
+                   print("По умолчанию задан продукт \(self.chosenSubscription!.id)")
+               }
+           }
               print("products successfully fetched: \(products.map { $0.id })")
        } catch {
                 print("products fetch error = \(error)")
        }
     }
 
-    func makePurchase(product: Product) {
+    func makePurchase(product: Product?) {
         Task {
-            await Apphud.purchase(product)
-            // обработать proSubscriptionBought
+            if let product {
+                await Apphud.purchase(product)
+            }
         }
     }
 
