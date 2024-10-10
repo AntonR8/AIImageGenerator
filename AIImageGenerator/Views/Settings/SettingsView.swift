@@ -17,10 +17,6 @@ struct SettingsView: View {
 
     var body: some View {
             List {
-                Text("")
-                    .frame(height: 100)
-                    .listRowBackground(Color.clear)
-
                 if !vm.proSubscriptionBought {
                     Section {
                         Button {
@@ -70,6 +66,7 @@ struct SettingsView: View {
 
             .foregroundStyle(.primary)
             .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 if !vm.proSubscriptionBought {
                     ToolbarItem(placement: .navigationBarTrailing) {

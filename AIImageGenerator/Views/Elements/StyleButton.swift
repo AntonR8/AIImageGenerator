@@ -31,6 +31,8 @@ struct StyleButton: View {
                 .font(.callout)
                 .frame(height: 40)
                 .padding(.horizontal)
+                .background(vm.styleChosen == styleName ? .white.opacity(0.1) : .clear)
+                .clipShape(Capsule())
                 .overlay {
                     Capsule()
                         .stroke(
