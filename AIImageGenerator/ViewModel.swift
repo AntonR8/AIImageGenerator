@@ -18,17 +18,19 @@ class ViewModel: ObservableObject {
     @AppStorage("firstLaunch") var firstLaunch = true
     @Published var proSubscriptionBought = false
     @Published var showSubscriptionSheet = false
+    @Published var showInGeneratingVIewSubscriptionSheet = false
     @Published var firstLaunchPaywall = true
 
     // DownLoading
     let downloadManager = DownloadManager()
-    @Published var curentPromt = "What do you want to generate?"
-    @Published var curentNegativePromt = "Use negative words like “blue” to get less blue color"
+    @Published var curentPromt = ""
+    @Published var curentNegativePromt = ""
     @Published var styleChosen: ImageStyle?
     @Published var imageURLs: [String] = []
     @Published var requestError = false
 
     // GeneratingView
+    @AppStorage("freeGenerationsLeft") var freeGenerationsLeft = 3
     @Published var isGenerating = false
     @State var timer: Timer?
     @State var speed: Double = 0.5
@@ -95,7 +97,7 @@ class ViewModel: ObservableObject {
         await MainActor.run {
             self.products = myPlacement?.paywall?.products ?? []
             if !products.isEmpty {
-                self.chosenSubscription = products[1]
+                self.chosenSubscription = products[2]
                 print("По умолчанию задан продукт: \(chosenSubscription?.name ?? "не задан")")
             }
         }
@@ -181,8 +183,20 @@ class ViewModel: ObservableObject {
         savedAssyncImages.append(imageURL)
     }
 
-    // DownLoading
     func createButtonPushed() {
+        if proSubscriptionBought {
+            generateImage()
+        } else {
+            if freeGenerationsLeft > 0 {
+                generateImage()
+            } else {
+                showSubscriptionSheet = true
+            }
+        }
+    }
+
+    // DownLoading
+    func generateImage() {
         Task {
             do {
                 async let requestID = try await self.downloadManager.getRequestID(prompt: curentPromt, selectedStyle: styleChosen ?? .none)
@@ -197,6 +211,7 @@ class ViewModel: ObservableObject {
                     for item in response.data.result {
                         self.recents.append(item.url)
                     }
+                    self.freeGenerationsLeft -= 1
                 }
             } catch {
                 print("Request failed with error: \(error)")

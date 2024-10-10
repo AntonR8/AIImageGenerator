@@ -21,7 +21,7 @@ struct PaywallView: View {
                 Spacer()
                 LogoAndAdvantagesView()
                 SubscriptionsOptionsView()
-                Spacer()
+                    .padding(.vertical)
                 button
                 PrivacyPolicyLinksView()
             }
@@ -60,6 +60,7 @@ extension PaywallView {
             Button {
                 vm.firstLaunchPaywall = false
                 vm.showSubscriptionSheet = false
+                vm.showInGeneratingVIewSubscriptionSheet = false
             } label: {
                 SmallImageButton(systemName: "xmark", foregroundStyle: .white, backGroundStyle: .black.opacity(0.5))
             }

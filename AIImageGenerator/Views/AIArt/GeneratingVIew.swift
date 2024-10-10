@@ -27,14 +27,18 @@ struct GeneratingVIew: View {
                 }
 
                 Spacer()
-                add
+                if !vm.proSubscriptionBought {
+                    add
+                }
             }
         }
         .onAppear(perform: {
-
             vm.completed = 100
             vm.startTimer()
         })
+        .fullScreenCover(isPresented: $vm.showInGeneratingVIewSubscriptionSheet) {
+            PaywallView()
+        }
     }
 
 
@@ -94,8 +98,12 @@ extension GeneratingVIew {
 
     var add: some View {
         VStack {
-            Text("You want to go faster?")
-            ProButtonView(title: "Upgrade to Pro")
+            Text("You have \(vm.freeGenerationsLeft) free generations left")
+            Button {
+                vm.showInGeneratingVIewSubscriptionSheet = true
+            } label: {
+                ProButtonView(title: "Upgrade to Pro")
+            }
         }
     }
 

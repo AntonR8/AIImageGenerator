@@ -35,7 +35,7 @@ struct StartView: View {
                     }
                 }
         }
-
+        .preferredColorScheme(.dark)
     }
 }
 

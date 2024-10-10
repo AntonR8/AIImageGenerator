@@ -25,6 +25,7 @@
 		12124D3C2C946E95009C7C70 /* ForthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124D3B2C946E95009C7C70 /* ForthView.swift */; };
 		12124D3E2C946EA2009C7C70 /* FifthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124D3D2C946EA2009C7C70 /* FifthView.swift */; };
 		12124D422C946F9B009C7C70 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12124D412C946F9B009C7C70 /* LaunchScreen.swift */; };
+		121855F92CB7E7D10078A6FC /* MenuElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121855F82CB7E7D10078A6FC /* MenuElementView.swift */; };
 		1268D02F2CA440D4005B981A /* HardCodeImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1268D02E2CA440C7005B981A /* HardCodeImageModel.swift */; };
 		1268D0322CA443B5005B981A /* Promts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1268D0312CA443AC005B981A /* Promts.swift */; };
 		128C5A1C2CA2A109005C0870 /* ApphudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 128C5A1B2CA2A109005C0870 /* ApphudSDK */; };
@@ -33,6 +34,7 @@
 		12AA9A9D2CA56750002A394F /* HardCodeGridElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA9A9C2CA56740002A394F /* HardCodeGridElementView.swift */; };
 		12B1CD162C9C300300FC74A5 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1CD152C9C300300FC74A5 /* DownloadManager.swift */; };
 		12B1CD182C9C362200FC74A5 /* EnumFetcherError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B1CD172C9C362200FC74A5 /* EnumFetcherError.swift */; };
+		12C890F12CB7F204001277CC /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C890F02CB7F204001277CC /* AppVersionView.swift */; };
 		12CEC6EC2CA6C2C60043FE7A /* BestOfferBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CEC6EB2CA6C2C60043FE7A /* BestOfferBadgeView.swift */; };
 		12CEC6EF2CA6C3CA0043FE7A /* PrivacyPolicyLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CEC6EE2CA6C3CA0043FE7A /* PrivacyPolicyLinksView.swift */; };
 		12CEC6F12CA6C42B0043FE7A /* SubscriptionsOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CEC6F02CA6C42B0043FE7A /* SubscriptionsOptionsView.swift */; };
@@ -83,6 +85,7 @@
 		12124D3B2C946E95009C7C70 /* ForthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForthView.swift; sourceTree = "<group>"; };
 		12124D3D2C946EA2009C7C70 /* FifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthView.swift; sourceTree = "<group>"; };
 		12124D412C946F9B009C7C70 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		121855F82CB7E7D10078A6FC /* MenuElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuElementView.swift; sourceTree = "<group>"; };
 		1268D02E2CA440C7005B981A /* HardCodeImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodeImageModel.swift; sourceTree = "<group>"; };
 		1268D0312CA443AC005B981A /* Promts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promts.swift; sourceTree = "<group>"; };
 		12AA9A952CA560D8002A394F /* HardCodeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodeImageView.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		12AA9A9C2CA56740002A394F /* HardCodeGridElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardCodeGridElementView.swift; sourceTree = "<group>"; };
 		12B1CD152C9C300300FC74A5 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		12B1CD172C9C362200FC74A5 /* EnumFetcherError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFetcherError.swift; sourceTree = "<group>"; };
+		12C890F02CB7F204001277CC /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
 		12CEC6EB2CA6C2C60043FE7A /* BestOfferBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestOfferBadgeView.swift; sourceTree = "<group>"; };
 		12CEC6EE2CA6C3CA0043FE7A /* PrivacyPolicyLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyLinksView.swift; sourceTree = "<group>"; };
 		12CEC6F02CA6C42B0043FE7A /* SubscriptionsOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsOptionsView.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				12F702742C92CA3F001A0861 /* SettingsView.swift */,
+				121855F82CB7E7D10078A6FC /* MenuElementView.swift */,
+				12C890F02CB7F204001277CC /* AppVersionView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				12E9CCCF2C985652009FECFB /* StartView.swift in Sources */,
 				12B1CD162C9C300300FC74A5 /* DownloadManager.swift in Sources */,
 				12124D242C941FE1009C7C70 /* CapsuleNotification.swift in Sources */,
+				121855F92CB7E7D10078A6FC /* MenuElementView.swift in Sources */,
 				12124D222C941C92009C7C70 /* SmallImageButtons.swift in Sources */,
 				12CEC6F12CA6C42B0043FE7A /* SubscriptionsOptionsView.swift in Sources */,
 				1268D0322CA443B5005B981A /* Promts.swift in Sources */,
@@ -482,6 +489,7 @@
 				12F702822C92E504001A0861 /* ExploreView.swift in Sources */,
 				12CEC6F62CA6C8000043FE7A /* InspirationsRecentsMenuView.swift in Sources */,
 				12F702882C92E777001A0861 /* TakeAPhotoButton.swift in Sources */,
+				12C890F12CB7F204001277CC /* AppVersionView.swift in Sources */,
 				12E9CCD12C9864D3009FECFB /* ColorExtension.swift in Sources */,
 				12124D1E2C940EC6009C7C70 /* AsyncImageView.swift in Sources */,
 				12CEC6FE2CA6D3F40043FE7A /* NegativeWordsMenuView.swift in Sources */,
@@ -624,7 +632,7 @@
 				DEVELOPMENT_TEAM = BZY75949H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = generaimage;
+				INFOPLIST_KEY_CFBundleDisplayName = "AI Image Creator";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
@@ -639,7 +647,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mam.generaimage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -663,7 +671,7 @@
 				DEVELOPMENT_TEAM = BZY75949H5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = generaimage;
+				INFOPLIST_KEY_CFBundleDisplayName = "AI Image Creator";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app requires read and write access to the photo library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to the photo library";
@@ -678,7 +686,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mam.generaimage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

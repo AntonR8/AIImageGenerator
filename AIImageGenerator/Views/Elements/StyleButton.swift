@@ -33,16 +33,26 @@ struct StyleButton: View {
                 .padding(.horizontal)
                 .overlay {
                     Capsule()
-                        .stroke(vm.styleChosen == styleName ? .accent : .gray)
+                        .stroke(
+                            vm.styleChosen == styleName ? .accent : .gray,
+                                style: StrokeStyle(
+                                    lineWidth: 1,
+                                    lineCap: .round,
+                                    lineJoin: .miter,
+                                    miterLimit: 0,
+//                                    dash: [5, 10],
+                                    dashPhase: 0
+                                )
+                            )
                 }
         })
-
+        .padding(1)
 
 
     }
 }
 
 #Preview {
-    StyleButton(styleName: .drawingStyle)
+    ChooseStyleHStackView()
         .environmentObject(ViewModel())
 }

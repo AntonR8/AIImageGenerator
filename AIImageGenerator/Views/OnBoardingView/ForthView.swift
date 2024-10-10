@@ -15,31 +15,28 @@ struct ForthView: View {
 
 
     var body: some View {
-        OnboardingView(
-            title: "Lots of positive reviews!",
-            description: "Leave a review and help us improve",
-            image: "forth"
-        )
-        .toolbar {
-            ToolbarItem(placement: .bottomBar) {
-                VStack {
-                    NavigationLink(destination: FifthView(),
-                                   label: {
-                        CapsuleButton(buttonTitle: "Continue")
-                            .frame(width: UIScreen.main.bounds.width - 32)
-                    })
-                    .disabled(!raitingRequested)
-                    .onTapGesture {
-                        requestReview()
-                        raitingRequested = true
-                    }
-                    DotsNavigationView(number: 4)
+        ZStack {
+            OnboardingView(
+                title: "Lots of positive reviews!",
+                description: "Leave a review and help us improve",
+                image: "forth"
+            )
+            VStack {
+                Spacer()
+                NavigationLink(destination: FifthView(),
+                               label: {
+                    CapsuleButton(buttonTitle: "Continue")
+                        .frame(width: UIScreen.main.bounds.width - 32)
+                })
+                .disabled(!raitingRequested)
+                .onTapGesture {
+                    requestReview()
+                    raitingRequested = true
                 }
-
+                DotsNavigationView(number: 4)
             }
-        }
         .navigationBarBackButtonHidden(true)
-
+}
     }
 }
 

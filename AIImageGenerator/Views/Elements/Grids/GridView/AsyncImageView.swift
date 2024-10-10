@@ -72,6 +72,10 @@ extension AsyncImageView {
                         SmallImageButton(systemName: "arrow.down.to.line", foregroundStyle: .white)
                     })
                     .popoverTip(saveTip)
+                    .onTapGesture {
+                        saveTip.invalidate(reason: .actionPerformed)
+                    }
+                    .tipViewStyle(CustomTipViewStyle())
                     Spacer()
 
                     AsyncImage(url: URL(string: imageURL)) { image in
@@ -158,6 +162,7 @@ extension AsyncImageView {
 
     var promptDescription: some View {
         Text(vm.curentPromt)
+            .frame(maxWidth: .infinity)
             .padding()
             .background(.tertiary.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 15))

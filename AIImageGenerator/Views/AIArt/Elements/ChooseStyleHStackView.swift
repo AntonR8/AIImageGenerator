@@ -11,10 +11,10 @@ struct ChooseStyleHStackView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                StyleButton(styleName: .art)
-                StyleButton(styleName: .photo)
-                StyleButton(styleName: .drawingStyle)
-                StyleButton(styleName: .none)
+                    StyleButton(styleName: .art)
+                    StyleButton(styleName: .photo)
+                    StyleButton(styleName: .drawingStyle)
+                    StyleButton(styleName: .none)
             }
         }
     }
@@ -22,4 +22,5 @@ struct ChooseStyleHStackView: View {
 
 #Preview {
     ChooseStyleHStackView()
+        .environmentObject(ViewModel())
 }

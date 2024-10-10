@@ -12,6 +12,13 @@ struct AIArtView: View {
     @EnvironmentObject var vm: ViewModel
     @State var shownegativeTextField = false
 
+    private enum Field: Int {
+        case prompttext
+        case negativeprompttext
+    }
+
+    @FocusState private var focusedField: Field?
+
     let promptTip = PromptTip()
 
     var body: some View {
@@ -22,8 +29,13 @@ struct AIArtView: View {
                 Text("Enter Prompt")
                     .font(.headline)
 
-                AITextEditor(bindingTextFieldVar: $vm.curentPromt)
+                AITextEditor(bindingTextFieldVar: $vm.curentPromt, promptPlaceholder: "What do you want to generate?")
+                    .focused($focusedField, equals: .prompttext)
                     .popoverTip(promptTip, arrowEdge: .top)
+                    .onTapGesture {
+                        promptTip.invalidate(reason: .actionPerformed)
+                    }
+                    .tipViewStyle(CustomTipViewStyle())
 
                 Text("Style")
                     .font(.headline)
@@ -34,7 +46,8 @@ struct AIArtView: View {
                 NegativeWordsMenuView(shownegativeTextField: $shownegativeTextField)
 
                 if shownegativeTextField {
-                    AITextEditor(bindingTextFieldVar: $vm.curentNegativePromt)
+                    AITextEditor(bindingTextFieldVar: $vm.curentNegativePromt, promptPlaceholder: "Use negative words like “blue” to get less blue color")
+                        .focused($focusedField, equals: .negativeprompttext)
                 }
 
                 Button(action: {
@@ -59,6 +72,12 @@ struct AIArtView: View {
         .fullScreenCover(isPresented: $vm.isGenerating, content: {
             GeneratingVIew()
         })
+        .scrollDismissesKeyboard(.immediately)
+        .onTapGesture {
+            if (focusedField != nil) {
+                focusedField = nil
+            }
+        }
     }
 }
 

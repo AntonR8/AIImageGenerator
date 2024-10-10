@@ -33,7 +33,7 @@ struct HardCodeImageView: View {
 
 
 #Preview {
-    HardCodeImageView(image: HardCodeImageModel(imageName: "image2", prompt: "", style: .none))
+    HardCodeImageView(image: HardCodeImageModel(imageName: "image2", prompt: "sdfsdfsf", style: .none))
         .environmentObject(ViewModel())
 }
 
@@ -142,9 +142,11 @@ extension HardCodeImageView {
 
     var promptDescription: some View {
         Text(image.prompt)
+            .frame(maxWidth: .infinity)
             .padding()
             .background(.tertiary.opacity(0.5))
             .clipShape(RoundedRectangle(cornerRadius: 15))
+
     }
 
     var infos: some View {

@@ -28,12 +28,13 @@ struct DataClass: Codable {
 
 struct Request: Codable {
     let profileID: Int
-    let app, version, userPrompt, productionPrompt: String
+    let app, version, gender, bodyPart: Int?
+    let userPrompt, productionPrompt: String
     let ai: String
 
     enum CodingKeys: String, CodingKey {
         case profileID = "profileId"
-        case app, version, userPrompt, productionPrompt, ai
+        case app, version, gender, bodyPart, userPrompt, productionPrompt, ai
     }
 }
 
@@ -42,3 +43,16 @@ struct Result: Codable, Identifiable {
     let url: String
 }
 
+
+//struct Request: Codable {
+//    let profileID: Int
+//    let app, version, color, style: JSONNull?
+//    let userPrompt, productionPrompt: String
+//    let gender, bodyPart: JSONNull?
+//    let ai: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case profileID = "profileId"
+//        case app, version, color, style, userPrompt, productionPrompt, gender, bodyPart, ai
+//    }
+//}

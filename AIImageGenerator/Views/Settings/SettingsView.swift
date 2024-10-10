@@ -13,11 +13,14 @@ struct SettingsView: View {
     @Environment(\.requestReview) var requestReview
     let contactURL = URL(string:"mailto:cihangultekiin@hotmail.com")!
     let termsOfUseURL =  URL(string: "https://www.termsfeed.com/live/bbc6cbdc-1b4f-463c-9d61-dd3acb21a3b9")!
-    let appStoreLink = URL(string:"https://www.AppStore.com")!
+    let appStoreLink = URL(string:"https://apps.apple.com/us/app/art-image-creator/id6711346469")!
 
     var body: some View {
-        VStack {
             List {
+                Text("")
+                    .frame(height: 100)
+                    .listRowBackground(Color.clear)
+
                 if !vm.proSubscriptionBought {
                     Section {
                         Button {
@@ -37,50 +40,34 @@ struct SettingsView: View {
                     Button {
                         requestReview()
                     } label: {
-                        Label(
-                            title: { Text("Rate our app") },
-                            icon: { Image(systemName: "star.bubble") }
-                        )
+                        MenuElementView(image: "star.bubble", title: "Rate our app")
                     }
                     ShareLink(item: appStoreLink) {
-                        Label(
-                            title: { Text("Share with friends") },
-                            icon: { Image(systemName: "square.and.arrow.up") }
-                        )
+                        MenuElementView(image: "square.and.arrow.up", title: "Share with friends")
                     }
                     HStack {
-                            Label(
-                                title: { Text("Notifications") },
-                                icon: { Image(systemName: "bell.badge") }
-                            )
+                        MenuElementView(image: "bell.badge", title: "Notifications", noChevron: true)
                         Spacer()
                         Toggle("", isOn: $vm.notificationsTurnedON)
                     }
                     Link(destination: contactURL, label: {
-                        Label(
-                            title: { Text("Contact us") },
-                            icon: { Image(systemName: "envelope") }
-                        )
+                        MenuElementView(image: "envelope", title: "Contact us")
                     })
                 }
 
                 Section {
                     Link(destination: termsOfUseURL, label: {
-                        Label(
-                            title: { Text("Usage Policy") },
-                            icon: { Image(systemName: "doc.text") }
-                        )
+                        MenuElementView(image: "doc.text", title: "Usage Policy")
                     })
                     Link(destination: termsOfUseURL, label: {
-                        Label(
-                            title: { Text("Privacy Policy") },
-                            icon: { Image(systemName: "lock.shield") }
-                        )
+                        MenuElementView(image: "lock.shield", title: "Privacy Policy")
                     })
+                    AppVersionView()
+                        .listRowBackground(Color.clear)
                 }
 
             }
-            .frame(maxHeight: 450)
+
             .foregroundStyle(.primary)
             .navigationTitle("Settings")
             .toolbar {
@@ -94,13 +81,6 @@ struct SettingsView: View {
                     }
                 }
             }
-
-
-            Text("App Version: 1.0.0")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            Spacer()
-        }
     }
 }
 

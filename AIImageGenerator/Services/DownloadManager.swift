@@ -8,14 +8,16 @@
 import SwiftUI
 
 class DownloadManager {
-    let profileId: Int = 8
+    let profileId: Int = 7
     @AppStorage("userId") var userId: Int = Int.random(in: 0...Int.max)
 
     
     func createPOSTrequest(prompt: String, selectedStyle: ImageStyle) -> String {
         let formattedPrompt = "\(selectedStyle.title) image of \(prompt)"
         return "https://codewizardev.space/api/v2/generate?profileId=\(profileId)&userId=\(userId)&prompt=\(formattedPrompt)&lang=en"
+        // "https://codewizardev.space/api/v2/generate?profileId=7&userId=11232323&prompt=dog with cats face&lang=en"
     }
+
 
     func createFETCHrequest(receivedRequestID: String)  -> String {
         return "https://codewizardev.space/api/v2/result?requestId=\(receivedRequestID)"
@@ -55,7 +57,7 @@ class DownloadManager {
     func returnNotEmptyResponse(receivedRequestID: String) async throws -> ResponseModel {
         var isEmpty = true
         var count = 0
-        var response = ResponseModel(error: false, data: DataClass(requestID: "", status: "processing", error: "", request: Request(profileID: 0, app: "", version: "", userPrompt: "", productionPrompt: "", ai: ""), result: []))
+        var response = ResponseModel(error: false, data: DataClass(requestID: "", status: "processing", error: "", request: Request(profileID: 0, app: nil, version: nil, gender: nil, bodyPart: nil, userPrompt: "", productionPrompt: "", ai: ""), result: []))
         repeat {
             let postRequestString = createFETCHrequest(receivedRequestID: receivedRequestID)
             response = try await returnResponse(postRequestString: postRequestString, httpMethod: "GET")

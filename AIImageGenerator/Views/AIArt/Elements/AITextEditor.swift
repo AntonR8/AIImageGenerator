@@ -9,10 +9,11 @@ import SwiftUI
 
 struct AITextEditor: View {
     @Binding var bindingTextFieldVar: String
+    let promptPlaceholder: String
 
     var body: some View {
         TextEditor(text: $bindingTextFieldVar)
-            .foregroundStyle(.gray)
+            .accentColor(.white)
             .scrollContentBackground(.hidden)
             .padding(8)
             .frame(height: 144)
@@ -23,6 +24,13 @@ struct AITextEditor: View {
             }
             .overlay {
                 HStack{
+                    if bindingTextFieldVar.isEmpty {
+                        VStack {
+                            Text(promptPlaceholder)
+                                .foregroundStyle(.gray)
+                            Spacer()
+                        }
+                    }
                     Spacer()
                     VStack {
                         Spacer()
@@ -36,9 +44,10 @@ struct AITextEditor: View {
                 }
                 .padding()
             }
+
     }
 }
 
 #Preview {
-    AITextEditor(bindingTextFieldVar: .constant(""))
+    AITextEditor(bindingTextFieldVar: .constant(""), promptPlaceholder: "What do you want to generate?")
 }

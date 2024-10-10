@@ -20,7 +20,7 @@ struct ExploreView: View {
             HardCodeGridView(arrayOfImages: vm.hardCodeImages)
 
         }
-        .padding(.top, 0.10001)
+        .padding(.top, 1)
         .navigationTitle("Explore")
     }
 }
